@@ -8,7 +8,7 @@
 // Non Divisible, якщо число не ділиться на 3 чи на 5.
 
 
-let n = prompt('Введіть будь-яке число', "");
+let n = prompt('Введіть будь-яке число');
 if (n%3==0 && n%5!==0) { 
     alert('Fizz');
 } else if (n%5==0 && n%3!==0) { 
@@ -17,18 +17,10 @@ if (n%3==0 && n%5!==0) {
     alert('FizzBuzz');
 } else if (n!==3 && n!==5) { 
     alert('Non Divisible');    
-} // Варіант через if...else
+} // Варіант 1 через if...else
 
-
-// Cо switch case и Тернарным у меня ничего не получилось, начал гуглить и наткнулся на статью в которой прочитал такое: 
-// Когда следует использовать switch case:
-// Когда количество вариантов значений для проверки не очень большое и известно заранее.
-
-//Такие два варианта пробовал и ничего не получилось((
-
-
-let n = prompt('Введіть будь-яке число', "");
-switch(n) {
+let n = prompt('Введіть будь-яке число');
+switch(true) {
     case (n%3==0 && n%5!==0):
         alert('Fizz');
         break;
@@ -40,29 +32,7 @@ switch(n) {
         break;
     default:
         alert('Non Divisible');
-}
-
-
-let n = prompt('Введіть будь-яке число', "");
-let a = n%3==0 && n%5!==0;
-let b = n%5==0 && n%3!==0;
-let c = n%3==0 && n%5==0;
-
-switch(n) {
-    case a:
-        alert('Fizz');
-        break;
-    case b:
-        alert('Buzz');
-        break;
-    case c:
-        alert('FizzBuzz');
-        break;
-    default:
-        alert('Non Divisible');
-}
-
-
+} // Варіант 2 через switch\case
 
 
 // №2. Що ввів користувач?
@@ -80,54 +50,30 @@ switch(n) {
 // При вирішенні цих задач також зверніть увагу на обробку виключень: якщо, на вашу думку, вони можуть виникнути - використовуйте відповідну та коректну конструкцію коду для цього.
 
 
-let n = prompt('Введіть будь-яке значення', "");
-let dataType = typeof n;
+let n = prompt('Введіть будь-яке значення');
+n=n.toLowerCase();
 
-switch(n) {
-    case "number":
-        alert('You entered a number');
-        break;
-    case "string":
-        alert('You entered a string');
-        break;
-    case "boolean":
-        alert('You entered a boolean');
-        break;
-    default:
-        alert('You entered a complex data');
-}
-
-
-let n = prompt('Введіть будь-яке значення', "");
-let dataType = typeof n;
-
-if ("number") {
+if (Number(n)) {
     alert('You entered a number');
-} else if ("string") {
-    alert('You entered a string');
-} else if ("boolean") {
+} else if (n==='false' || n==='true') {
     alert('You entered a boolean');
 } else {
     alert('You entered a complex data');
-}
-
-// Такие 2 нерабочие варианта, не могу понять как исправить, очень жду НЕ оценку, а помощь и напутствие)
+} // Варіант 1 через if...else
 
 
 let n = prompt('Введіть будь-яке значення');
-let dataType = typeof n;
-typeof n;
+n=n.toLowerCase();
 
-switch(dataType) {
-    case 'number':
+switch(true) {
+    case !isNaN(+n): 
         alert('You entered a number');
         break;
-    case 'string':
-        alert('You entered a string');
-        break;
-    case 'boolean':
+    case n==='false' || n==='true':
         alert('You entered a boolean');
         break;
     default:
         alert('You entered a complex data');
-}
+} // Варіант 2 через switch\case
+
+//В 69 строке возможна альтернатива-  case !isNaN(Number(n)):
