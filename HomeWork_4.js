@@ -111,6 +111,23 @@ if ("number") {
     alert('You entered a complex data');
 }
 
-
-
 // Такие 2 нерабочие варианта, не могу понять как исправить, очень жду НЕ оценку, а помощь и напутствие)
+
+
+let n = prompt('Введіть будь-яке значення');
+let dataType = typeof n;
+typeof n;
+
+switch(dataType) {
+    case 'number':
+        alert('You entered a number');
+        break;
+    case 'string':
+        alert('You entered a string');
+        break;
+    case 'boolean':
+        alert('You entered a boolean');
+        break;
+    default:
+        alert('You entered a complex data');
+}
