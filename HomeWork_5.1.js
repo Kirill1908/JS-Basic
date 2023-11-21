@@ -7,14 +7,12 @@
 // Якщо користувач ввів не числове значення - вивести текстове повідомлення Only numbers, please та знову запитувати ввести значення.
 
 
-let n = prompt("Введіть будь-яке число:");
-
-while (n <= 122 && n) {
-    n = prompt("Should continue");
+  let n= +prompt("Введіть будь-яке число:");
+  while (isNaN(n) || n < 123) {
+    if (!isNaN(n)) {
+        n= +prompt('Should continue');
+    } else {
+        n= +prompt('Only numbers, please');
+    }
   }
-  if (n>=123) {
-    alert("Wow, you've ended this endless cycle!");
-  }
-  while (n!=Number() && n) {
-    n = prompt("Only numbers, please");
-  }
+  alert("Wow, you've ended this endless cycle!");
